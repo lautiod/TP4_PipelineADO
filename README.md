@@ -6,7 +6,7 @@ Cómo ejecutar local, cómo corre el pipeline, prerequisitos del agente, puertos
 
 Aplicación mínima con frontend (React + Vite) y backend (Node.js) para practicar CI en Azure DevOps con agente Self-Hosted.
 
-## Ejecución local
+## 1) Ejecución local
 
 ### **Requisitos previos:**
 
@@ -40,7 +40,7 @@ __Levanta en http://localhost:5173__
 
 __Puerto: 5173__
 
-## Pipeline
+## 2) Pipeline
 
 El pipeline está definido en azure-pipelines.yml.
 
@@ -58,7 +58,7 @@ El pipeline está definido en azure-pipelines.yml.
 
 **4.** Al finalizar, quedan publicados los artefactos en la pestaña Artifacts de la ejecución.
 
-## Requisitos del Agente Self-Hosted
+## 3) Requisitos del Agente Self-Hosted
 
 - Sistema operativo: Windows 10/11.
 
