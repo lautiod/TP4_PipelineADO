@@ -1,0 +1,45 @@
+# azure-pipelines.yml
+trigger:
+  branches:
+    include:
+      - main
+  # paths:               # (opcional) solo dispara si cambian estos paths
+  #   include:
+  #     - frontend/**
+  #     - backend/**
+  #   exclude:
+  #     - README.md
+  # batch: true          # (opcional) agrupa pushes seguidos en 1 run
+
+pool:
+  name: TP4_PipelineADO
+
+stages:
+- stage: CI
+  displayName: "CI - Build & Artifacts"
+  jobs:
+  - job: frontend
+    displayName: "Frontend: build & publish"
+    steps:
+    - checkout: self
+    - powershell: |
+        npm ci
+        npm run build
+      workingDirectory: frontend
+      displayName: "Build frontend (Vite)"
+    - publish: frontend/dist
+      artifact: frontend_dist
+      displayName: "Publicar artefacto: frontend_dist"
+
+  - job: backend
+    displayName: "Backend: build & publish"
+    steps:
+    - checkout: self
+    - powershell: |
+        npm ci
+        npm run build
+      workingDirectory: backend
+      displayName: "Build backend"
+    - publish: backend/build
+      artifact: backend_build
+      displayName: "Publicar artefacto: backend_build"
