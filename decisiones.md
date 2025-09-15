@@ -48,4 +48,29 @@ Dentro del stage se definieron dos jobs independientes:
 
 -> Tests automáticos: se ejecutan en ambos jobs antes del build para asegurar calidad.
 
+## 3. Evidencias
+
+### Creación del Agent Pool
+
+<img width="709" height="460" alt="image" src="https://github.com/user-attachments/assets/5c93acaf-5f35-4903-880c-cd311311f2eb" />
+
+### Configuración del Agente Self-Hosted
+
+<img width="711" height="382" alt="image" src="https://github.com/user-attachments/assets/32ca0107-da69-4ef6-9b94-dc9475c8f4b9" />
+
+<img width="958" height="84" alt="image" src="https://github.com/user-attachments/assets/1ed1560e-5646-4e4b-8c30-cd9b837571e8" />
+
+### Creación del pipeline asociando nuestro repositorio en GitHub
+
+<img width="961" height="482" alt="image" src="https://github.com/user-attachments/assets/a2b04523-bee8-47e8-a549-72b25f2059ee" />
+
+### Ejecución del pipeline
+
+<img width="354" height="806" alt="image" src="https://github.com/user-attachments/assets/6ac23dcd-efeb-4ec7-9bc2-01e4f52d21c9" />
+
+### Artefactos publicados
+
+<img width="271" height="239" alt="image" src="https://github.com/user-attachments/assets/eddad360-7a48-442c-beab-1b84af82adea" />
+
+
   
