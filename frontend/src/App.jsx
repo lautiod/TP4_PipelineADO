@@ -13,7 +13,7 @@ export default function App() {
 
   return (
     <main style={{ fontFamily: 'system-ui, sans-serif', padding: 24 }}>
-      <h1>Mini Frontend</h1>
+      <h1>- Interfaz -</h1>
       <p>Consumo del endpoint <code>/api/health</code> del backend:</p>
       {error && <p style={{color:'crimson'}}>Error: {error}</p>}
       {health ? (
