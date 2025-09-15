@@ -42,11 +42,11 @@ Dentro del stage se definieron dos jobs independientes:
 
 **Características clave:**
 
--> Agente Self-Hosted: el pipeline corre en el pool TP4_PipelineADO, con un agente instalado en la PC local.
+-> **Agente Self-Hosted:** el pipeline corre en el pool TP4_PipelineADO, con un agente instalado en la PC local.
 
--> Artefactos: se generan dos paquetes separados (front y back), que validan el build independiente pero forman parte de la misma ejecución CI.
+-> **Artefactos:** se generan dos paquetes separados (front y back), que validan el build independiente pero forman parte de la misma ejecución CI.
 
--> Tests automáticos: se ejecutan en ambos jobs antes del build para asegurar calidad.
+-> **Tests automáticos:** se ejecutan en ambos jobs antes del build para asegurar calidad.
 
 ## 3. Evidencias
 
@@ -57,6 +57,7 @@ Dentro del stage se definieron dos jobs independientes:
 ### Configuración del Agente Self-Hosted
 
 <img width="711" height="382" alt="image" src="https://github.com/user-attachments/assets/32ca0107-da69-4ef6-9b94-dc9475c8f4b9" />
+
 
 <img width="958" height="84" alt="image" src="https://github.com/user-attachments/assets/1ed1560e-5646-4e4b-8c30-cd9b837571e8" />
 
