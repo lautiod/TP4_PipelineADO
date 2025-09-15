@@ -1,0 +1,78 @@
+# azure-pipelines.yml
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  name: TP4_PipelineADO
+
+stages:
+- stage: CI
+  displayName: "CI - Tests, Build & Artifacts"
+  jobs:
+  - job: frontend
+    displayName: "Frontend: test, build & publish"
+    steps:
+    - checkout: self
+
+    - powershell: |
+        npm ci
+      workingDirectory: frontend
+      displayName: "Frontend - npm ci"
+
+    - powershell: |
+        npm test
+      workingDirectory: frontend
+      displayName: "Frontend - tests"
+
+    - powershell: |
+        npm run build
+      workingDirectory: frontend
+      displayName: "Frontend - build"
+
+    - publish: frontend/dist
+      artifact: frontend_dist
+      displayName: "Publicar artefacto: frontend_dist"
+
+  - job: backend
+    displayName: "Backend: test, build & publish"
+    steps:
+    - checkout: self
+
+    - powershell: |
+        npm ci
+      workingDirectory: backend
+      displayName: "Backend - npm ci"
+
+    # Levanta el server temporalmente, corre tests y lo apaga
+    - powershell: |
+        $wd = "$(System.DefaultWorkingDirectory)\backend"
+        $p = Start-Process -FilePath "node" -ArgumentList "src/server.js" -WorkingDirectory $wd -PassThru
+        try {
+          # Esperar a que el /api/health responda
+          $ok = $false
+          for ($i=0; $i -lt 30; $i++) {
+            try {
+              Invoke-RestMethod "http://localhost:3001/api/health" | Out-Null
+              $ok = $true; break
+            } catch { Start-Sleep -Milliseconds 500 }
+          }
+          if (-not $ok) { throw "El backend no respondió en /api/health" }
+
+          npm test
+        }
+        finally {
+          if ($p -and -not $p.HasExited) { Stop-Process -Id $p.Id -Force }
+        }
+      workingDirectory: backend
+      displayName: "Backend - tests (server transitorio)"
+
+    - powershell: |
+        npm run build
+      workingDirectory: backend
+      displayName: "Backend - build"
+
+    - publish: backend/build
+      artifact: backend_build
+      displayName: "Publicar artefacto: backend_build"
