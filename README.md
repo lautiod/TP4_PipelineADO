@@ -23,6 +23,7 @@ Ejecutar los siguientes comandos:
 > npm run dev
 
 __Levanta en http://localhost:3001__
+
 __Puerto: 3001__
 
 **2. Frontend**
@@ -36,6 +37,7 @@ Ejecutar los siguientes comandos:
 > npm run dev
 
 __Levanta en http://localhost:5173__
+
 __Puerto: 5173__
 
 ## Pipeline
