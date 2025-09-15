@@ -8,11 +8,11 @@ Aplicación mínima con frontend (React + Vite) y backend (Node.js) para practic
 
 ## Ejecución local
 
-**Requisitos previos:**
+### **Requisitos previos:**
 
 - Node.js 18+ instalado en la máquina.
 
-**1. Backend**
+### **1. Backend**
 
 Ejecutar los siguientes comandos:
 
@@ -26,7 +26,7 @@ __Levanta en http://localhost:3001__
 
 __Puerto: 3001__
 
-**2. Frontend**
+### **2. Frontend**
 
 Ejecutar los siguientes comandos:
 
@@ -44,7 +44,7 @@ __Puerto: 5173__
 
 El pipeline está definido en azure-pipelines.yml.
 
-**Flujo del pipeline (CI)**
+### **Flujo del pipeline (CI)**
 
 **1.** Se ejecuta automáticamente en cada push a la rama main.
 
