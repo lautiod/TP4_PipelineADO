@@ -73,5 +73,12 @@ Dentro del stage se definieron dos jobs independientes:
 
 <img width="271" height="239" alt="image" src="https://github.com/user-attachments/assets/eddad360-7a48-442c-beab-1b84af82adea" />
 
+## 4. Uso de IA
+
+Durante el desarrollo del trabajo se utilizó una herramienta de ChatGPT como apoyo. Su papel fue principalmente:
+
+Explicarnos conceptos relacionados con pipelines, agentes y prácticas de Integración Continua, resolver dudas puntuales surgidas en la configuración del entorno y en la interpretación de la consigna, orientar en la estructuración del pipeline, proponiendo ejemplos y buenas prácticas que luego fueron adaptadas al contexto del trabajo.
+
+
 
   
