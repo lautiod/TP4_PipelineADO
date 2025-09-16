@@ -10,11 +10,11 @@
 
 Para el trabajo se eligió un stack JavaScript/Node con aplicación mínima:
 
-- **Frontend:** React + Vite.
+- **Frontend:** React.
 
 -> Scripts: npm ci, npm test (Vitest), npm run build.
 
-- **Backend:** Node.js + Express.
+- **Backend:** Node.js.
 
 -> Scripts: npm ci, npm test (node:test), npm run build.
 
